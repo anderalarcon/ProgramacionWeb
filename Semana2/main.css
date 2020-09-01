@@ -1,0 +1,35 @@
+    body {
+        background-color: beige;
+    }
+    
+    h1 {
+        background-color: red;
+    }
+    
+    #parrafo1 {
+        color: peru;
+        font-family: sans-serif;
+    }
+    
+    .grupo2 {
+        color: darkorchid;
+    }
+    
+    .grupo1 {
+        color: blue;
+    }
+    
+    .subtitulo1 {
+        color: blueviolet;
+        opacity: 0.2;
+        /*light
+    0.5 mediano
+    0.9 suave*/
+        font-size: 40px;
+        /*o em*/
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        /*bolid negrita,italics cursiva obliqe*/
+        font-weight: bold;
+        /*normal,bold*/
+    }
