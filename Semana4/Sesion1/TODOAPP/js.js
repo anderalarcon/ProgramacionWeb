@@ -8,7 +8,7 @@ var obtenerTODO=function(){
 var agregarTODO=function(todo){
     var listaul=document.getElementById("lista");
     var nuevoli=document.createElement("li");//creamos un elemento nuevo para ir agregar al darle click
-    nuevoli.setAttribute("class","list-group-item");//setear clase para que sea bootstrap cada vez que doy click crea cuadradito
+    nuevoli.setAttribute("class","list-group-item");//a ese nuevo elemetno le ponemos bootstrap .
     nuevoli.innerText=todo;//le asignamos un texto
     listaul.appendChild(nuevoli);//le agregamos un hijo a la lista
 
@@ -19,7 +19,7 @@ var agregarTODO=function(todo){
 
 var limpiarTODO=function(){
 
-    document.getElementById("lista").innerHTML="";
+    document.getElementById("lista").innerHTML="";//limpiamos la lista
 };
 
 var agregarconenter=function(evt){
@@ -36,11 +36,11 @@ var agregarconenter=function(evt){
 var agregarTODOONclick=function(){
 
 //1.obtenemos lo que se ecscribio
-var todo=obtenerTODO();
+var todo=obtenerTODO();//llamamos a funcion
 console.log(todo);
 
 //2.agregar a la lista
-agregarTODO(todo);
+agregarTODO(todo);//llamamos a funcion
 
 var limpiar=document.getElementById("butALimpiar");
 limpiar.addEventListener("click",limpiarTODO);
@@ -53,9 +53,9 @@ limpiar.addEventListener("click",limpiarTODO);
 
 
 var main=function(){
-   var but= document.getElementById("butAgregarTODO");
-   but.addEventListener("click",agregarTODOONclick);
-   window.addEventListener("keypress",agregarconenter);
+   var but= document.getElementById("butAgregarTODO");//configramos el boton al hacer click
+   but.addEventListener("click",agregarTODOONclick);//le asignamos una funcion
+   window.addEventListener("keypress",agregarconenter);//enter ecole
 
 };
 
