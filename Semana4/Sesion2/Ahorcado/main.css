@@ -1,3 +1,19 @@
 h1{
     text-align: center;
+    background-color: red;
+};
+
+#refran{
+    color: red;
+    letter-spacing: 100px;
+};
+
+.oculto{
+    display: none   ;//oculta
+}
+
+.visible{
+
+    display: block;
+
 }
