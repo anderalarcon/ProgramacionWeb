@@ -1,19 +1,12 @@
-h1{
-    text-align: center;
-    background-color: red;
-};
-
-#refran{
-    color: red;
-    letter-spacing: 100px;
-};
-
-.oculto{
-    display: none   ;//oculta
+#refran {
+    font-size: 40pt;
+    letter-spacing: 5px;
 }
 
-.visible{
+.oculto {
+    display: none;
+}
 
+.visible {
     display: block;
-
 }
