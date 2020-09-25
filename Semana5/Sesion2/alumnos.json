@@ -1,0 +1,12 @@
+[{
+    "nombre" : " Billy",
+    "edad":35,
+    "casado":true,
+    "peso":100,
+    "hobbie":["futbol","natacion"]
+
+},{
+    "nombre":"Boris",
+    "edad":19,
+    "casado":false
+}]
