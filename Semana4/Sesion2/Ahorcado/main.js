@@ -11,22 +11,20 @@ var ocultar = function (refran) {
   //hacemos las lineas
   var refranoculto = "";
   for (var i of refran) {
-    //Bota las letras altok ; x cada letra
     if (i != " ") {
       refranoculto += "_";
     } else {
       refranoculto = refranoculto + " ";
     }
   }
-  return refranoculto;
+  return refranoculto;//__ __
 };
 
 var mostrarrefranoculto = function (refran) {
-  // document.querySelector("#refran").innerHTML=refran; con #
-  document.querySelector("#refran").innerHTML = refran;
+  var a =document.querySelector("#refran").innerHTML = refran;//imprime las lineas del refran con espaciado y todo //__ __
 };
 
-var verificarcaracterenrefran = function (caracter, refran) {
+var verificarcaracterenrefran = function (caracter, refran) {//(a , aa bb)
   for (var c of refran) {
     if (c == caracter) {
       return true;
@@ -35,13 +33,15 @@ var verificarcaracterenrefran = function (caracter, refran) {
   return false; //si termina de recorrer y no encuentra
 };
 
-var descubrircaracterenrefran = function (c, refranselec, refranocul) {
+var descubrircaracterenrefran = function (c, refranselec, refranocul) {//a,aa bb,null
   var refran = "";
   for (var i in refranselec) {
-    if (c == refranselec[i]) {
-      refran += c;
+    if (c == refranselec[i]) {//aabb
+      refran += c;//si encuntra rellena aa __
+
     } else {
-      refran += refranocul[i];
+      refran += refranocul[i];//no hace nada ps no escribe
+
     }
   }
   return refran;
@@ -76,34 +76,27 @@ var mostrarmsjperdedor = function () {
 
 var teclaapretada = function (evt) {
   var caracter = evt.key.toUpperCase(); //almacena las letras
-
   var estaEnrefran = verificarcaracterenrefran(caracter, refranSeleccionado);
 
   if (estaEnrefran) {
-    refranOculto = descubrircaracterenrefran(
-      caracter,
-      refranSeleccionado,
-      refranOculto
-    );
-    mostrarrefranoculto(refranOculto);
-    var hayGanador = verificarganador();
+    refranOculto = descubrircaracterenrefran(caracter,refranSeleccionado,refranOculto);// retorna aa bb
+    mostrarrefranoculto(refranOculto);// si acierto todo mostraria aa bb
+    var hayGanador = verificarganador();/// aa bb = aa bb
 
     if (hayGanador) {
-      mostrarmensaje();
+      mostrarmensaje();//4444
     }
   } else {
     actualizarImagen();
-    var perdio = verificarperdedor();
+    var perdio = verificarperdedor();////3333
     if (perdio) {
-      mostrarmsjperdedor();
+      mostrarmsjperdedor();///4444
     }
   }
 };
 
 var setearlistener = function () {
-  document
-    .querySelector("#caracteres_repetidos")
-    .addEventListener("keypress", teclaapretada);
+  document.querySelector("#caracteres_repetidos").addEventListener("keypress", teclaapretada);
 };
 
 var main = function () {
@@ -117,12 +110,10 @@ var main = function () {
         3.3Caso que no este : Actualizar la imagen y el contador de errores
             3.3.1 Verificar si perdio : Mostrar msj
         3.4Concatenar letra en caja de texto
-
-
     */
 
   refranSeleccionado = FRASES[0];
-  refranOculto = ocultar(refranSeleccionado);
+  refranOculto = ocultar(refranSeleccionado);//__ __
   mostrarrefranoculto(refranOculto);
   setearlistener();
 };

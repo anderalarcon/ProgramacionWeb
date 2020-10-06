@@ -1,15 +1,56 @@
-var callback=function(){
-};
+var callback = function (evt) {
+  var req=evt.target;
+  if(req.readyState=4){//en asincrono | cuando termina la peticion ahi recien pregunto 
+      if(req.status=200){
+          //peticion correcta
+          var listaAlumnos=JSON.parse(req.responseText);
+          for(var i =0;i<listaAlumnos.length;i++){
+              console.log(listaAlumnos[i].codigo + " " + listaAlumnos[i].nota);
+          }
+      }else{
+          //manejo de errores
+          console.error("Hubo un error en la peticion");
+      }
+}};
 
-var main=function(){
+var peticionSincrona = function () {
+  var req = new XMLHttpRequest();
+  req.open("GET", "https://api.jsonbin.io/b/5f72740e7243cd7e8245db83/1", false); //configure mi canal de comunicacion FALSE -> SINCRONA
 
-    var req=new XMLHttpRequest();
-    req.open("GET","http://www.google.com",false);//configure mi canal de comunicacion
+  req.send(null);
+  if (req.status == 200) {
+    //codigo correcto
+    var respuesta = req.responseText; //el msj del profe
+    var resp = JSON.parse(respuesta);
+    console.log(respuesta); //en json
 
-    req.send();
-    if(req.status==200){
-        console.log(req.responseText);
+    for (var i = 0; i < resp.length; i++) {
+      console.log(resp[i].codigo + " " + resp[i].nota);
     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+var peticionAsincrona = function () {
+
+  var req = new XMLHttpRequest();
+  req.open("GET", "https://api.jsonbin.io/b/5f72740e7243cd7e8245db83/1", true); //asincrona
+  req.onreadystatechange = callback; //definir funcion callback
+  req.send(null);
+
 };
 
-window.addEventListener("load",main);
+var main = function () {
+  peticionAsincrona();
+};
+
+window.addEventListener("load", main);

@@ -3,13 +3,7 @@ var contadorTODOS = 0;
 var obtenerTODO = function () {
   var input = document.getElementById("todo");
   var todo = input.value;
-  //  var todo=input.getAttribute("value");//lo mismo
   return todo;
-};
-
-var agregarTODOPILA = function () {
-  var listaul = document.getElementById("lista");
-  var nuevoli = document.createElement("li");
 };
 
 var agregarTODO = function (todo) {
@@ -17,10 +11,11 @@ var agregarTODO = function (todo) {
   var nuevoli = document.createElement("li"); //creamos un elemento nuevo para ir agregar al darle click
 
   nuevoli.id = "todo_" + contadorTODOS++; //comienza en 0 y se va incrementando . Si lo pongo antes primero se evalua
-  nuevoli.setAttribute("class", "list-group-item todo"); //a ese nuevo elemetno le ponemos bootstrap .
-  nuevoli.innerText = todo; //le asignamos un texto
-  nuevoli.addEventListener("click",Todoonclick);
+  nuevoli.setAttribute("class", "list-group-item todo"); 
+  nuevoli.innerText = todo; 
   listaul.appendChild(nuevoli); //le agregamos un hijo a la lista
+
+  nuevoli.addEventListener("click",Todoonclick);//al acerle click al elemento se elimina
 
   var input2 = document.getElementById("todo");
   input2.value = "";
@@ -29,6 +24,8 @@ var agregarTODO = function (todo) {
 var limpiarTODO = function () {
   document.getElementById("lista").innerHTML = ""; //limpiamos la lista
 };
+
+
 
 var agregarconenter = function (evt) {
   if (evt.keyCode == 13) {
@@ -40,34 +37,26 @@ var agregarconenter = function (evt) {
 
 var agregarTODOONclick = function () {
   //1.obtenemos lo que se ecscribio
-  var todo = obtenerTODO(); //llamamos a funcion
+  var todo = obtenerTODO(); 
   console.log(todo);
 
   //2.agregar a la lista
-  agregarTODO(todo); //llamamos a funcion
+  agregarTODO(todo);
 };
 
-var Todoonclick = function () {//eliminar al hacer click
+var Todoonclick = function () {
   this.remove();//chapa al li y lo borra
-
 };
 
 
 
 
 var main = function () {
-  var but = document.getElementById("butAgregarTODO"); //configramos el boton al hacer click
-  but.addEventListener("click", agregarTODOONclick); //le asignamos una funcion
+   document.getElementById("butAgregarTODO").addEventListener("click", agregarTODOONclick); //configramos el boton al hacer click
 
-  var limpiar = document.getElementById("butALimpiar");
-  limpiar.addEventListener("click", limpiarTODO);
+  document.getElementById("butALimpiar").addEventListener("click", limpiarTODO);
 
-  /*var arrTODOS=document.querySelectorAll(".todo");//busco a los elementos que tenga ese id
-  for (var i=0;i<arrTODOS.length;i++){
-      arrTODOS[i].addEventListener("click",Todoonclick);
-  }*/
-
-  window.addEventListener("keypress", agregarconenter); //enter ecole
+  window.addEventListener("keypress", agregarconenter); //enter 
 };
 
 window.addEventListener("load", main);

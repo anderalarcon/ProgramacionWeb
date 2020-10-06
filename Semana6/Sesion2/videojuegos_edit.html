@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+
+   
+    <h1>Registrar Videojuegos</h1>
+    <form >
+            <div class="form-group">
+                <label >ID</label>
+                <input id="videojuego_id" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label >Nombre</label>
+                <input id="videojuego_nombre" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label >Categoria</label>
+                <select id="videojuego_categoria" class="form-control" >
+                    <option value="0">----Seleccionar Categoria-------</option>
+                  
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label >Consolas</label>
+                <input id="videojuego_consolas" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label >Desarrollador</label>
+                <input id="videojuego_desarrollador" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label >Ranking</label>
+                <input id="videojuego_ranking" type="text" class="form-control">
+            </div>
+
+            <button id="btnGuardar" type="button" class="btn btn-danger">Guardar</button>
+            <button id="btnRegresar" type="button" class="btn btn-link">Regresar</button>
+
+            <script src="videojuegos_edit.js"></script>
+
+    </form>
+</div>
+</body>
+</html>

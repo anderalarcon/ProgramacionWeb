@@ -106,7 +106,7 @@ var botonOperacionOnClick = function() { //otra manera de definir pero es lo mis
 var main = function() { //para funciones concatenadas
     //configurando botones de digito
     for (var i = 0; i < 10; i++) {
-        var but = document.getElementById("bot" + i);
+        var but = document.getElementById("bot" + i);//capturamos todos los botones
         but.addEventListener("click", botonDigitoOnClick); //"clicl al hacer click"
 
     }
